@@ -5,16 +5,14 @@
 # ASCII Startup Screen
 clear
 
-echo "                                                     "
-echo " _   _           _        ____       _               "
-echo "| \ | | ___   __| | ___  / ___|  ___| |_ _   _ _ __  "
-echo "|  \| |/ _ \\ / _\` |/ _ \\ \___ \\ / _ \\ __| | | | '_ \\ "
-echo "| |\  | (_) | (_| |  __/  ___) |  __/ |_| |_| | |_) |"
-echo "|_| \_|\___/ \__,_|\___| |____/ \___|\__|\__,_| .__/ "
-echo "                                              |_|    "
-echo "                                                       "
+#!/bin/bash
+
+# ASCII Startup Screen
+clear
+
 echo "====================================="
-echo "   Auto Setup by Daniel00001         "
+echo "          Auto Setup Script          "
+echo "              Daniel00001            "
 echo "====================================="
 
 # Function to wait for a process to complete
