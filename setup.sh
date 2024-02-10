@@ -1,12 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
-# ASCII Startup Screen
-clear
-
-#!/bin/bash
-
 # ASCII Startup Screen
 clear
 
