@@ -16,6 +16,9 @@ wait_for_process() {
     done
 }
 
+# Unset existing GOPATH
+unset GOPATH
+
 # 1. Preparing the Development Tools
 sudo apt-get update && sudo apt-get install -y make gcc
 wait_for_process "apt-get"
@@ -24,7 +27,8 @@ wget https://go.dev/dl/go1.20.3.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.20.3.linux-amd64.tar.gz
 wait_for_process "tar"
 
-mkdir -p /home/user1/go/src
+# Create directory if it does not exist
+mkdir -p /home/user1/go/src/github.com/artela-network
 go env -w "GOPATH=/home/user1/go"
 
 # 2. Cloning and Building the Code
@@ -43,7 +47,7 @@ wait_for_process "make"
 sudo DEBIAN_FRONTEND=noninteractive apt-get update
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+sudo add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y docker-ce docker-compose
 wait_for_process "apt"
 
@@ -54,4 +58,4 @@ cd artela
 make create-testnet
 wait_for_process "make"
 
-echo "Auto Completed powered by  Daniel00001"
+echo "Auto Completed powered by Daniel00001"
